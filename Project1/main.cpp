@@ -100,12 +100,13 @@ int main()
 
     Shader ourShader("vertex.glsl", "frag.glsl");
 
-    Model ourModel("lab3.obj");
+    Model ourModel("./lab3.obj");
+    glEnable(GL_DEPTH_TEST);
     while (!glfwWindowShouldClose(myWindow))
     {
         processInput(myWindow);
         glClearColor(0.1f, 0.1f, 0.1f, 1.0f);
-        glClear(GL_COLOR_BUFFER_BIT);
+        glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
 
 		float currentFrame = glfwGetTime();
